@@ -1,0 +1,16 @@
+{
+ "db_name": "7a230c6896554e6d", 
+ "db_password": "KcizWNzUgESnBhe2", 
+ "domains": [
+  "erp.ringlus.in"
+ ], 
+ "dormant": true, 
+ "limits": {
+  "space_usage": {
+   "backup_size": 2.0, 
+   "database_size": 26.29, 
+   "files_size": 2.0, 
+   "total": 30.29
+  }
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "db_name": "ce8f7d83a4ad22b8", 
+ "db_password": "OYOfYTAUpjj77PWu", 
+ "domains": [
+  "erp.mybusiness.com"
+ ], 
+ "encryption_key": "Xq0-dAYcJay2O7X4WO2TsbFyGKKmJqANW3G2r4m5-Xc=", 
+ "limits": {
+  "space_usage": {
+   "backup_size": 94.0, 
+   "database_size": 63.53, 
+   "files_size": 7.0, 
+   "total": 164.53
+  }
+ }
+}

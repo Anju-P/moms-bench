@@ -1,0 +1,311 @@
+{
+ "etype": "ProgrammingError", 
+ "evalue": "ProgrammingError(1146, u\"Table 'ce8f7d83a4ad22b8.tabComment' doesn't exist\")", 
+ "exception": {
+  "args": "(1146, u\"Table 'ce8f7d83a4ad22b8.tabComment' doesn't exist\")", 
+  "message": "''"
+ }, 
+ "frames": [
+  {
+   "call": "(request=<Request 'http://erp.mybusiness.com/' [POST]>)", 
+   "dump": {
+    "frappe. request": "<Request 'http://erp.mybusiness.com/' [POST]>", 
+    "frappe.request. path": "u'/'", 
+    "frappe.request.path. startswith": "<built-in method startswith of unicode object>", 
+    "global frappe": "<module 'frappe' from '/home/umoms/moms-bench/apps/frappe/frappe/__init__.pyc'>"
+   }, 
+   "file": "/home/umoms/moms-bench/apps/frappe/frappe/app.py", 
+   "func": "application", 
+   "lines": {
+    "59": "\t\telif frappe.request.path.startswith(\"/api/\"):", 
+    "60": "\t\t\tresponse = frappe.api.handle()", 
+    "61": "", 
+    "62": "\t\telif frappe.request.path.startswith('/backups'):", 
+    "63": "\t\t\tresponse = frappe.utils.response.download_backup(request.path)"
+   }, 
+   "lnum": 61
+  }, 
+  {
+   "call": "()", 
+   "dump": {
+    "cmd": "u'frappe.desk.notifications.get_notifications'", 
+    "data": "None", 
+    "global execute_cmd": "<function execute_cmd>"
+   }, 
+   "file": "/home/umoms/moms-bench/apps/frappe/frappe/handler.py", 
+   "func": "handle", 
+   "lines": {
+    "19": "", 
+    "20": "\tif cmd!='login':", 
+    "21": "\t\tdata = execute_cmd(cmd)", 
+    "22": "", 
+    "23": "\t# data can be an empty string or list which are valid responses"
+   }, 
+   "lnum": 21
+  }, 
+  {
+   "call": "(cmd=u'frappe.desk.notifications.get_notifications', from_async=False)", 
+   "dump": {
+    "frappe. call": "<function call>", 
+    "frappe. form_dict": "{'cmd': u'frappe.desk.notifications.get_notifications'}", 
+    "global frappe": "<module 'frappe' from '/home/umoms/moms-bench/apps/frappe/frappe/__init__.pyc'>", 
+    "method": "<function get_notifications>"
+   }, 
+   "file": "/home/umoms/moms-bench/apps/frappe/frappe/handler.py", 
+   "func": "execute_cmd", 
+   "lines": {
+    "54": "\tis_whitelisted(method)", 
+    "55": "", 
+    "56": "\treturn frappe.call(method, **frappe.form_dict)", 
+    "57": "", 
+    "58": ""
+   }, 
+   "lnum": 56
+  }, 
+  {
+   "call": "(fn=<function get_notifications>, *args=(), **kwargs={'cmd': u'frappe.desk.notifications.get_notifications'})", 
+   "dump": {
+    "args": "()", 
+    "fn": "<function get_notifications>", 
+    "newargs": "{}"
+   }, 
+   "file": "/home/umoms/moms-bench/apps/frappe/frappe/__init__.py", 
+   "func": "call", 
+   "lines": {
+    "1034": "\tnewargs = get_newargs(fn, kwargs)", 
+    "1035": "", 
+    "1036": "\treturn fn(*args, **newargs)", 
+    "1037": "", 
+    "1038": "def get_newargs(fn, kwargs):"
+   }, 
+   "lnum": 1036
+  }, 
+  {
+   "call": "()", 
+   "dump": {
+    "config": "{u'for_doctype': {u'Program Enrollment': {u'docs... u'frappe.core.notifications.get_unread_emails'}}", 
+    "global get_notifications_for_modules": "<function get_notifications_for_modules>", 
+    "notification_count": "{u'Additional Salary': 0, u'Appraisal': 0, u'Asset': 0, u'Asset Maintenance Log': 0, u'Asset Movement': 0, u'Asset Repair': 0, u'Asset Value Adjustment': 0, u'Attendance': 0, u'Attendance Request': 0, u'Auto Repeat': 0, ...}"
+   }, 
+   "file": "/home/umoms/moms-bench/apps/frappe/frappe/desk/notifications.py", 
+   "func": "get_notifications", 
+   "lines": {
+    "38": "\treturn {", 
+    "39": "\t\t\"open_count_doctype\": get_notifications_for_doctypes(config, notification_count),", 
+    "40": "\t\t\"open_count_module\": get_notifications_for_modules(config, notification_count),", 
+    "41": "\t\t\"open_count_other\": get_notifications_for_other(config, notification_count),", 
+    "42": "\t\t\"targets\": get_notifications_for_targets(config, notification_percent),"
+   }, 
+   "lnum": 40
+  }, 
+  {
+   "call": "(config={u'for_doctype': {u'Program Enrollment': {u'docs... u'frappe.core.notifications.get_unread_emails'}}, notification_count={u'Additional Salary': 0, u'Appraisal': 0, u'Asset': 0, u'Asset Maintenance Log': 0, u'Asset Movement': 0, u'Asset Repair': 0, u'Asset Value Adjustment': 0, u'Attendance': 0, u'Attendance Request': 0, u'Auto Repeat': 0, ...})", 
+   "dump": {}, 
+   "file": "/home/umoms/moms-bench/apps/frappe/frappe/desk/notifications.py", 
+   "func": "get_notifications_for_other", 
+   "lines": {
+    "69": "", 
+    "70": "def get_notifications_for_other(config, notification_count):", 
+    "71": "\t\"\"\"Notifications for other items\"\"\"", 
+    "72": "\treturn get_notifications_for(\"for_other\", config, notification_count)", 
+    "73": ""
+   }, 
+   "lnum": 71
+  }, 
+  {
+   "call": "(notification_type=u'for_other', config={u'for_doctype': {u'Program Enrollment': {u'docs... u'frappe.core.notifications.get_unread_emails'}}, notification_count={u'Additional Salary': 0, u'Appraisal': 0, u'Asset': 0, u'Asset Maintenance Log': 0, u'Asset Movement': 0, u'Asset Repair': 0, u'Asset Value Adjustment': 0, u'Attendance': 0, u'Attendance Request': 0, u'Auto Repeat': 0, ...})", 
+   "dump": {}, 
+   "file": "/home/umoms/moms-bench/apps/frappe/frappe/desk/notifications.py", 
+   "func": "get_notifications_for", 
+   "lines": {
+    "79": "\t\t\tif m in notification_count:", 
+    "80": "\t\t\t\topen_count[m] = notification_count[m]", 
+    "81": "\t\t\telse:", 
+    "82": "\t\t\t\topen_count[m] = frappe.get_attr(notification_map[m])()", 
+    "83": ""
+   }, 
+   "lnum": 81
+  }, 
+  {
+   "call": "()", 
+   "dump": {
+    "SELECT": "undefined", 
+    "count": "undefined"
+   }, 
+   "file": "/home/umoms/moms-bench/apps/frappe/frappe/core/notifications.py", 
+   "func": "get_unseen_likes", 
+   "lines": {
+    "55": "\t\t\tand reference_owner=%(user)s", 
+    "56": "\t\t\tand seen=0", 
+    "57": "\t\t\t\"\"\", {\"user\": frappe.session.user})[0][0]", 
+    "58": "", 
+    "59": "def get_unread_emails():"
+   }, 
+   "lnum": 57
+  }, 
+  {
+   "call": "(self=<frappe.database.Database instance>, query=u\"select count(*) from `tabComment`\\n\\t\\twhere\\n...ference_owner=%(user)s\\n\\t\\t\\tand seen=0\\n\\t\\t\\t\", values={u'user': u'admin@ringlus.in'}, as_dict=0, as_list=0, formatted=0, debug=0, ignore_ddl=0, as_utf8=0, auto_commit=0, update=None, explain=False)", 
+   "dump": {}, 
+   "file": "/home/umoms/moms-bench/apps/frappe/frappe/database.py", 
+   "func": "sql", 
+   "lines": {}, 
+   "lnum": 199
+  }, 
+  {
+   "call": "(self=<pymysql.cursors.Cursor object>, query=\"select count(*) from `tabComment`\\n\\t\\twhere\\n\\t\\t\\tcom...erence_owner='admin@ringlus.in'\\n\\t\\t\\tand seen=0\\n\\t\\t\\t\", args={u'user': u'admin@ringlus.in'})", 
+   "dump": {
+    "query": "\"select count(*) from `tabComment`\\n\\t\\twhere\\n\\t\\t\\tcom...erence_owner='admin@ringlus.in'\\n\\t\\t\\tand seen=0\\n\\t\\t\\t\"", 
+    "result": "undefined", 
+    "self": "<pymysql.cursors.Cursor object>", 
+    "self. _query": "<bound method Cursor._query of <pymysql.cursors.Cursor object>>"
+   }, 
+   "file": "/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/cursors.py", 
+   "func": "execute", 
+   "lines": {
+    "168": "        query = self.mogrify(query, args)", 
+    "169": "", 
+    "170": "        result = self._query(query)", 
+    "171": "        self._executed = query", 
+    "172": "        return result"
+   }, 
+   "lnum": 170
+  }, 
+  {
+   "call": "(self=<pymysql.cursors.Cursor object>, q=\"select count(*) from `tabComment`\\n\\t\\twhere\\n\\t\\t\\tcom...erence_owner='admin@ringlus.in'\\n\\t\\t\\tand seen=0\\n\\t\\t\\t\")", 
+   "dump": {
+    "conn": "<pymysql.connections.Connection object>", 
+    "conn. query": "<bound method Connection.query of <pymysql.connections.Connection object>>", 
+    "q": "\"select count(*) from `tabComment`\\n\\t\\twhere\\n\\t\\t\\tcom...erence_owner='admin@ringlus.in'\\n\\t\\t\\tand seen=0\\n\\t\\t\\t\""
+   }, 
+   "file": "/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/cursors.py", 
+   "func": "_query", 
+   "lines": {
+    "326": "        self._last_executed = q", 
+    "327": "        self._clear_result()", 
+    "328": "        conn.query(q)", 
+    "329": "        self._do_get_result()", 
+    "330": "        return self.rowcount"
+   }, 
+   "lnum": 328
+  }, 
+  {
+   "call": "(self=<pymysql.connections.Connection object>, sql=\"select count(*) from `tabComment`\\n\\t\\twhere\\n\\t\\t\\tcom...erence_owner='admin@ringlus.in'\\n\\t\\t\\tand seen=0\\n\\t\\t\\t\", unbuffered=False)", 
+   "dump": {
+    "self": "<pymysql.connections.Connection object>", 
+    "self. _affected_rows": "0", 
+    "self. _read_query_result": "<bound method Connection._read_query_result of <pymysql.connections.Connection object>>", 
+    "unbuffered": "False"
+   }, 
+   "file": "/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/connections.py", 
+   "func": "query", 
+   "lines": {
+    "515": "                sql = sql.encode(self.encoding, 'surrogateescape')", 
+    "516": "        self._execute_command(COMMAND.COM_QUERY, sql)", 
+    "517": "        self._affected_rows = self._read_query_result(unbuffered=unbuffered)", 
+    "518": "        return self._affected_rows", 
+    "519": ""
+   }, 
+   "lnum": 517
+  }, 
+  {
+   "call": "(self=<pymysql.connections.Connection object>, unbuffered=False)", 
+   "dump": {
+    "result": "<pymysql.connections.MySQLResult object>", 
+    "result. read": "<bound method MySQLResult.read of <pymysql.connections.MySQLResult object>>"
+   }, 
+   "file": "/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/connections.py", 
+   "func": "_read_query_result", 
+   "lines": {
+    "730": "        else:", 
+    "731": "            result = MySQLResult(self)", 
+    "732": "            result.read()", 
+    "733": "        self._result = result", 
+    "734": "        if result.server_status is not None:"
+   }, 
+   "lnum": 732
+  }, 
+  {
+   "call": "(self=<pymysql.connections.MySQLResult object>)", 
+   "dump": {
+    "first_packet": "undefined", 
+    "self": "<pymysql.connections.MySQLResult object>", 
+    "self. connection": "None", 
+    "self.connection._read_packet": "undefined"
+   }, 
+   "file": "/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/connections.py", 
+   "func": "read", 
+   "lines": {
+    "1073": "    def read(self):", 
+    "1074": "        try:", 
+    "1075": "            first_packet = self.connection._read_packet()", 
+    "1076": "", 
+    "1077": "            if first_packet.is_ok_packet():"
+   }, 
+   "lnum": 1075
+  }, 
+  {
+   "call": "(self=<pymysql.connections.Connection object>, packet_type=<class 'pymysql.protocol.MysqlPacket'>)", 
+   "dump": {
+    "packet": "<pymysql.protocol.MysqlPacket object>", 
+    "packet. check_error": "<bound method MysqlPacket.check_error of <pymysql.protocol.MysqlPacket object>>"
+   }, 
+   "file": "/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/connections.py", 
+   "func": "_read_packet", 
+   "lines": {
+    "682": "", 
+    "683": "        packet = packet_type(buff, self.encoding)", 
+    "684": "        packet.check_error()", 
+    "685": "        return packet", 
+    "686": ""
+   }, 
+   "lnum": 684
+  }, 
+  {
+   "call": "(self=<pymysql.protocol.MysqlPacket object>)", 
+   "dump": {
+    "err. raise_mysql_exception": "<function raise_mysql_exception>", 
+    "global err": "<module 'pymysql.err' from '/home/umoms/moms-ben...cal/lib/python2.7/site-packages/pymysql/err.pyc'>", 
+    "self": "<pymysql.protocol.MysqlPacket object>", 
+    "self. _data": "\"\\xffz\\x04#42S02Table 'ce8f7d83a4ad22b8.tabComment' doesn't exist\""
+   }, 
+   "file": "/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/protocol.py", 
+   "func": "check_error", 
+   "lines": {
+    "218": "            errno = self.read_uint16()", 
+    "219": "            if DEBUG: print(\"errno =\", errno)", 
+    "220": "            err.raise_mysql_exception(self._data)", 
+    "221": "", 
+    "222": "    def dump(self):"
+   }, 
+   "lnum": 220
+  }, 
+  {
+   "call": "(data=\"\\xffz\\x04#42S02Table 'ce8f7d83a4ad22b8.tabComment' doesn't exist\")", 
+   "dump": {
+    "errno": "1146", 
+    "errorclass": "<class 'pymysql.err.ProgrammingError'>", 
+    "errval": "u\"Table 'ce8f7d83a4ad22b8.tabComment' doesn't exist\""
+   }, 
+   "file": "/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/err.py", 
+   "func": "raise_mysql_exception", 
+   "lines": {
+    "105": "        errval = data[9:].decode('utf-8', 'replace')", 
+    "106": "    else:", 
+    "107": "        errval = data[3:].decode('utf-8', 'replace')", 
+    "108": "    errorclass = error_map.get(errno, InternalError)", 
+    "109": "    raise errorclass(errno, errval)"
+   }, 
+   "lnum": 109
+  }
+ ], 
+ "locals": {
+  "data": "\"\\xffz\\x04#42S02Table 'ce8f7d83a4ad22b8.tabComment' doesn't exist\"", 
+  "errno": "1146", 
+  "errorclass": "<class 'pymysql.err.ProgrammingError'>", 
+  "errval": "u\"Table 'ce8f7d83a4ad22b8.tabComment' doesn't exist\"", 
+  "is_41": "True"
+ }, 
+ "pyver": "Python 2.7.15rc1: /home/umoms/moms-bench/env/bin/python (prefix: /home/umoms/moms-bench/env)", 
+ "timestamp": "2019-10-24 17:09:00.741271", 
+ "traceback": "Traceback (most recent call last):\n  File \"/home/umoms/moms-bench/apps/frappe/frappe/app.py\", line 61, in application\n  File \"/home/umoms/moms-bench/apps/frappe/frappe/handler.py\", line 21, in handle\n    data = execute_cmd(cmd)\n  File \"/home/umoms/moms-bench/apps/frappe/frappe/handler.py\", line 56, in execute_cmd\n    return frappe.call(method, **frappe.form_dict)\n  File \"/home/umoms/moms-bench/apps/frappe/frappe/__init__.py\", line 1036, in call\n    return fn(*args, **newargs)\n  File \"/home/umoms/moms-bench/apps/frappe/frappe/desk/notifications.py\", line 40, in get_notifications\n    \"open_count_module\": get_notifications_for_modules(config, notification_count),\n  File \"/home/umoms/moms-bench/apps/frappe/frappe/desk/notifications.py\", line 71, in get_notifications_for_other\n    \"\"\"Notifications for other items\"\"\"\n  File \"/home/umoms/moms-bench/apps/frappe/frappe/desk/notifications.py\", line 81, in get_notifications_for\n    else:\n  File \"/home/umoms/moms-bench/apps/frappe/frappe/core/notifications.py\", line 57, in get_unseen_likes\n    \"\"\", {\"user\": frappe.session.user})[0][0]\n  File \"/home/umoms/moms-bench/apps/frappe/frappe/database.py\", line 199, in sql\n  File \"/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/cursors.py\", line 170, in execute\n    result = self._query(query)\n  File \"/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/cursors.py\", line 328, in _query\n    conn.query(q)\n  File \"/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/connections.py\", line 517, in query\n    self._affected_rows = self._read_query_result(unbuffered=unbuffered)\n  File \"/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/connections.py\", line 732, in _read_query_result\n    result.read()\n  File \"/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/connections.py\", line 1075, in read\n    first_packet = self.connection._read_packet()\n  File \"/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/connections.py\", line 684, in _read_packet\n    packet.check_error()\n  File \"/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/protocol.py\", line 220, in check_error\n    err.raise_mysql_exception(self._data)\n  File \"/home/umoms/moms-bench/env/local/lib/python2.7/site-packages/pymysql/err.py\", line 109, in raise_mysql_exception\n    raise errorclass(errno, errval)\nProgrammingError: (1146, u\"Table 'ce8f7d83a4ad22b8.tabComment' doesn't exist\")\n"
+}

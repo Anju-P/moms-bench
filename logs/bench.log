@@ -1,0 +1,89 @@
+2019-03-12 13:44:24,200 INFO getting app erpnext
+2019-03-12 13:44:24,217 INFO git clone https://github.com/frappe/erpnext --branch master --depth 1 --origin upstream
+2019-03-12 13:44:46,857 INFO installing erpnext
+2019-03-12 13:44:46,857 INFO ./env/bin/pip install -q  -e ./apps/erpnext 
+2019-07-26 10:27:28,913 INFO updating bench
+2019-07-26 10:27:28,916 INFO git pull
+2019-07-26 10:32:59,695 INFO git config --unset-all remote.upstream.fetch
+2019-07-26 10:32:59,700 INFO git config --add remote.upstream.fetch '+refs/heads/*:refs/remotes/upstream/*'
+2019-07-26 10:32:59,708 INFO git fetch upstream 
+2019-07-26 10:33:01,821 INFO git checkout version-11
+2019-07-26 10:33:03,198 INFO git merge upstream/version-11
+2019-07-26 10:42:47,917 INFO updating bench
+2019-07-26 10:42:47,918 INFO git pull
+2019-07-26 10:43:28,844 INFO git config --unset-all remote.upstream.fetch
+2019-07-26 10:43:28,851 INFO git config --add remote.upstream.fetch '+refs/heads/*:refs/remotes/upstream/*'
+2019-07-26 10:43:28,857 INFO git fetch upstream --unshallow
+2019-07-26 10:44:19,836 INFO git checkout master
+2019-07-26 10:44:23,620 INFO git merge upstream/master
+2019-07-26 10:44:26,416 INFO git config --unset-all remote.upstream.fetch
+2019-07-26 10:44:26,423 INFO git config --add remote.upstream.fetch '+refs/heads/*:refs/remotes/upstream/*'
+2019-07-26 10:44:26,432 INFO git fetch upstream 
+2019-07-26 10:44:28,503 INFO git checkout master
+2019-07-26 10:44:28,607 INFO git merge upstream/master
+2019-10-24 17:08:15,598 INFO git config --unset-all remote.upstream.fetch
+2019-10-24 17:08:15,614 INFO git config --add remote.upstream.fetch '+refs/heads/*:refs/remotes/upstream/*'
+2019-10-24 17:08:15,619 INFO git fetch upstream 
+2019-10-24 17:08:25,035 INFO git checkout version-12
+2019-10-24 17:08:27,810 INFO git merge upstream/version-12
+2019-10-24 17:08:50,329 INFO git config --unset-all remote.upstream.fetch
+2019-10-24 17:08:50,333 INFO git config --add remote.upstream.fetch '+refs/heads/*:refs/remotes/upstream/*'
+2019-10-24 17:08:50,339 INFO git fetch upstream 
+2019-10-24 17:08:52,322 INFO git checkout version-12
+2019-10-24 17:08:53,945 INFO git merge upstream/version-12
+2019-10-24 17:08:53,953 INFO ./env/bin/pip install --upgrade pip
+2019-10-24 17:09:05,595 INFO ./env/bin/pip install -q -r /home/umoms/moms-repo/requirements.txt
+2019-10-24 17:09:16,732 INFO installing frappe
+2019-10-24 17:09:16,732 INFO ./env/bin/pip install -q  -e ./apps/frappe 
+2019-10-24 17:09:45,114 INFO installing erpnext
+2019-10-24 17:09:45,114 INFO ./env/bin/pip install -q  -e ./apps/erpnext 
+2019-10-24 17:09:50,935 INFO yarn install
+2019-10-24 17:13:25,243 INFO yarn install
+2019-10-24 17:32:53,202 INFO git config --unset-all remote.upstream.fetch
+2019-10-24 17:32:53,207 INFO git config --add remote.upstream.fetch '+refs/heads/*:refs/remotes/upstream/*'
+2019-10-24 17:32:53,214 INFO git fetch upstream 
+2019-10-24 17:32:55,036 INFO git checkout version-12
+2019-10-24 17:32:55,252 INFO git merge upstream/version-12
+2019-10-24 17:33:01,179 INFO git config --unset-all remote.upstream.fetch
+2019-10-24 17:33:01,185 INFO git config --add remote.upstream.fetch '+refs/heads/*:refs/remotes/upstream/*'
+2019-10-24 17:33:01,190 INFO git fetch upstream 
+2019-10-24 17:33:03,080 INFO git checkout version-12
+2019-10-24 17:33:04,422 INFO git merge upstream/version-12
+2019-10-25 09:19:44,405 INFO git config --unset-all remote.upstream.fetch
+2019-10-25 09:19:44,524 INFO git config --add remote.upstream.fetch '+refs/heads/*:refs/remotes/upstream/*'
+2019-10-25 09:19:44,530 INFO git fetch upstream 
+2019-10-25 09:19:46,348 INFO git checkout version-12
+2019-10-25 09:19:52,463 INFO git merge upstream/version-12
+2019-10-25 09:20:41,185 INFO git config --unset-all remote.upstream.fetch
+2019-10-25 09:20:41,190 INFO git config --add remote.upstream.fetch '+refs/heads/*:refs/remotes/upstream/*'
+2019-10-25 09:20:41,195 INFO git fetch upstream 
+2019-10-25 09:20:43,919 INFO git checkout version-12
+2019-10-25 09:20:49,204 INFO git merge upstream/version-12
+2019-10-25 09:37:47,162 INFO ./env/bin/pip install --upgrade pip
+2019-10-25 09:37:56,795 INFO ./env/bin/pip install -q -r /home/umoms/moms-repo/requirements.txt
+2019-10-25 09:37:58,330 INFO installing frappe
+2019-10-25 09:37:58,330 INFO ./env/bin/pip install -q  -e ./apps/frappe 
+2019-10-25 09:38:06,935 INFO installing erpnext
+2019-10-25 09:38:06,936 INFO ./env/bin/pip install -q  -e ./apps/erpnext 
+2019-10-25 09:38:12,211 INFO yarn install
+2019-10-25 09:38:15,038 INFO yarn install
+2019-10-25 09:48:51,256 INFO sudo supervisorctl restart moms-bench-workers: moms-bench-web:
+2019-10-25 09:51:45,926 INFO updating bench
+2019-10-25 09:51:45,927 INFO git pull
+2019-10-25 09:51:54,008 INFO ./env/bin/pip install Pillow
+2019-10-25 09:52:10,392 INFO pulling frappe
+2019-10-25 09:52:10,399 INFO git pull  upstream version-12
+2019-10-25 09:52:12,315 INFO find . -name "*.pyc" -delete
+2019-10-25 09:52:12,504 INFO pulling erpnext
+2019-10-25 09:52:12,512 INFO git pull  upstream version-12
+2019-10-25 09:52:14,722 INFO find . -name "*.pyc" -delete
+2019-10-25 09:52:14,948 INFO ./env/bin/pip install --upgrade pip
+2019-10-25 09:52:16,870 INFO ./env/bin/pip install -q -r /home/umoms/moms-repo/requirements.txt
+2019-10-25 09:52:18,343 INFO installing frappe
+2019-10-25 09:52:18,344 INFO ./env/bin/pip install -q  -e ./apps/frappe 
+2019-10-25 09:52:22,061 INFO installing erpnext
+2019-10-25 09:52:22,061 INFO ./env/bin/pip install -q  -e ./apps/erpnext 
+2019-10-25 09:52:26,126 INFO yarn install
+2019-10-25 09:52:26,779 INFO yarn install
+2019-10-25 09:52:55,013 INFO bench build
+2019-10-25 09:54:13,631 INFO sudo supervisorctl restart moms-bench-workers: moms-bench-web:
